@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './Components/Header/Header';
+import Main from './Components/Main/Main';
+import Footer from './Components/Footer/Footer';
+import ShoppingCart from './Components/ShoppingCart/ShoppingCart';
+import { useState } from 'react';
+import CartProvider from './Store/CartProvider';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [showCart, setShowCart] = useState(false);
+
+	const showCartHandler = () => {
+		setShowCart(true);
+	};
+
+	const hideCartHandler = () => {
+		setShowCart(false);
+	};
+
+	return (
+		<CartProvider>
+			{showCart && <ShoppingCart onClose={hideCartHandler} />}
+			<Header onShowCart={showCartHandler} />
+			<Main />
+			<Footer />
+		</CartProvider>
+	);
 }
 
 export default App;

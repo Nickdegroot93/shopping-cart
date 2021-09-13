@@ -1,0 +1,20 @@
+/*  COLORS   
+White: #F4F4F4
+Light Orange: #F0A500
+Dark Orange: #CF7500
+Black: #000000
+*/
+
+.hero {
+	background-image: linear-gradient(
+			to right bottom,
+			rgba(0, 0, 0, 0.6),
+			rgba(207, 117, 0, 0.4)
+		),
+		url(../../Img/hero.jpg);
+	height: fill;
+	background-size: cover;
+	background-position: center;
+	color: #cf7500;
+	padding: 2rem;
+}

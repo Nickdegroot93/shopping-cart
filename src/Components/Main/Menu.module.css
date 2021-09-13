@@ -1,0 +1,42 @@
+/*  COLORS   
+White: #F4F4F4
+Light Orange: #F0A500
+Dark Orange: #CF7500
+Black: #000000
+*/
+.menu__container {
+	background-color: rgba(0, 0, 0, 0.77);
+	max-width: 45rem;
+	min-width: 26rem;
+	margin: 0 auto;
+	border-radius: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.menu__container ul {
+	list-style: none;
+	margin: 0;
+}
+
+.menu__title {
+	color: #f0a500;
+	font-weight: 200;
+	font-size: 2rem;
+	padding: 1rem;
+}
+.menu__title::after {
+	content: '';
+	position: absolute;
+	height: 1px;
+	width: 15%;
+	top: 10.8rem;
+	left: 50%;
+	transform: translatex(-50%);
+	background-color: #f0a500;
+}
+
+ul {
+	padding: 1rem;
+}
