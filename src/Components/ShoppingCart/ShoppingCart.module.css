@@ -41,6 +41,7 @@ Black: #000000
 .empty-error {
 	font-style: italic;
 	font-weight: 700;
+	font-size: 1rem;
 }
 
 .amount__box {
@@ -69,4 +70,19 @@ Black: #000000
 .cta__box button:hover {
 	background-color: #f0a500;
 	color: #f4f4f4;
+}
+
+@media only screen and (max-width: 450px) {
+	.cart__box {
+		min-width: 13rem;
+	}
+	.amount__box {
+		margin: 1rem 0;
+	}
+	.amount__title {
+		font-size: 0.9rem;
+	}
+	.amount__price {
+		font-size: 0.9rem;
+	}
 }

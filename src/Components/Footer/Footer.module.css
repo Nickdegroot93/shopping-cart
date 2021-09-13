@@ -30,3 +30,15 @@ p {
 	font-style: italic;
 	font-size: 0.7rem;
 }
+
+@media only screen and (max-width: 450px) {
+	.logo {
+		width: 2rem;
+	}
+	.title {
+		font-size: 1rem;
+	}
+	p {
+		font-size: 0.5rem;
+	}
+}

@@ -8,7 +8,7 @@ Black: #000000
 .item__box {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+
 	margin: 1rem 0rem;
 	padding: 1rem;
 	border-radius: 3px;

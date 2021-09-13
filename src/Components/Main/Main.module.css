@@ -18,3 +18,9 @@ Black: #000000
 	color: #cf7500;
 	padding: 2rem;
 }
+
+@media only screen and (max-width: 450px) {
+	.hero {
+		padding: 0.7rem;
+	}
+}

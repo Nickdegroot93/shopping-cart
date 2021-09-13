@@ -48,3 +48,17 @@
 	font-style: italic;
 	margin: 5px 1rem 5px 0;
 }
+@media only screen and (max-width: 450px) {
+	.cartitem__box {
+		min-width: 8rem;
+	}
+	.title {
+		font-size: 0.9rem;
+	}
+	.price {
+		font-size: 0.8rem;
+	}
+	.amount {
+		font-size: 0.6rem;
+	}
+}
