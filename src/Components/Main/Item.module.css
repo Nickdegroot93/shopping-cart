@@ -74,3 +74,29 @@ Black: #000000
 	background-color: #cf7500;
 	color: #0a0a0a;
 }
+
+@media only screen and (max-width: 350px) {
+	.item__box {
+		flex-direction: column;
+	}
+	.item__box input {
+		display: none;
+	}
+	.item__box label {
+		display: none;
+	}
+	.btn_add {
+		padding: 0.6rem 3rem;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.item__box {
+		flex-direction: column;
+	}
+	.item__right {
+		margin-top: 1rem;
+		display: flex;
+		flex-direction: row;
+	}
+}
