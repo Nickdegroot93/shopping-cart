@@ -38,7 +38,6 @@ const Item = (props) => {
 					<Input
 						label="Amount"
 						input={{
-							ref: { amountInputRef },
 							id: 'amount_' + props.id,
 							type: 'number',
 							min: '1',
