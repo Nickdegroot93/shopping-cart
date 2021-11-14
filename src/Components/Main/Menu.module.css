@@ -37,13 +37,14 @@ Black: #000000
 	font-weight: 200;
 	font-size: 2rem;
 	padding: 1rem;
+	position: relative;
 }
 .menu__title::after {
 	content: '';
 	position: absolute;
 	height: 1px;
-	width: 15%;
-	top: 10.8rem;
+	width: 100%;
+	top: 4rem;
 	left: 50%;
 	transform: translatex(-50%);
 	background-color: #f0a500;

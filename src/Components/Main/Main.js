@@ -1,11 +1,13 @@
 import styles from './Main.module.css';
 import Menu from './Menu';
+import OrderComplete from './OrderComplete';
 
-const Main = (props) => {
+const Main = ({ orderComplete, menuItems }) => {
 	return (
 		<>
 			<div className={styles.hero}>
-				<Menu menuItems={props.menuItems} />
+				{orderComplete && <OrderComplete />}
+				<Menu menuItems={menuItems} />
 			</div>
 		</>
 	);

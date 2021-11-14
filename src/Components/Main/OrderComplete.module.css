@@ -1,0 +1,29 @@
+/*  COLORS   
+White: #F4F4F4
+Light Orange: #F0A500
+Dark Orange: #CF7500
+Black: #000000
+*/
+
+.order-container {
+	background-color: rgba(0, 0, 0, 0.77);
+	padding: 2rem;
+	max-width: 30rem;
+	min-width: 20rem;
+	margin: 0 auto 1rem auto;
+	border-radius: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.order-message {
+	text-align: center;
+	font-size: 1.5rem;
+	color: #f4f4f4;
+}
+
+.order-message span {
+	font-size: 0.8rem;
+	font-style: italic;
+}

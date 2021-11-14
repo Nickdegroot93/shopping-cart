@@ -44,7 +44,7 @@ const ShoppingCart = (props) => {
 				</div>
 				<div className={styles.cta__box}>
 					<button onClick={props.onClose}>Close</button>
-					{hasItems && <button>Order</button>}
+					{hasItems && <button onClick={props.onOrder}>Order</button>}
 				</div>
 			</div>
 		</Modal>

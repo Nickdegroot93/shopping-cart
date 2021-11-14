@@ -1,51 +1,49 @@
 import styles from './Menu.module.css';
 import Item from './Item';
-
-const menuItems = [
-	{
-		title: 'Butler Burger',
-		description: 'Aioli, pickles, onion jam and arugula.',
-		price: 8.95,
-		id: 1,
-	},
-	{
-		title: 'Republic Burger',
-		description:
-			'Mayonnaise, plum jam, Brie cheese, hazelnuts and arugula in balsamic vinaigrette.',
-		price: 9.95,
-		id: 2,
-	},
-	{
-		title: 'Mayor Burger',
-		description:
-			'Mayonnaise, chimichurri, pickled onion and grilled cherry tomatoes.',
-		price: 9.95,
-		id: 3,
-	},
-	{
-		title: `Mad Burger`,
-		description:
-			'Double beef patty, double cheese, beef bacon, onion rings, lettuce, tomatoes, mayo and BBQ sauce.',
-		price: 10.95,
-		id: 4,
-	},
-	{
-		title: 'Son of a Bun Veggie',
-		description:
-			'Quinoa wheat and lentils patty with mushrooms stuffed with "gouda cheese", roasted cherry tomatoes, lettuce, pickles, Thousand Island dressing, and date honey mustard',
-		price: 8.95,
-		id: 5,
-	},
-	{
-		title: 'Chicken Paradise',
-		description:
-			'Crispy chicken, cheddar cheese grilled onion, tomatoes, lettuce, pickles, garlic sauce, mayo and chipotle sauce.',
-		price: 7.95,
-		id: 6,
-	},
-];
+import { useEffect, useState } from 'react';
 
 const Menu = () => {
+	const [menuItems, setMenuItems] = useState([]);
+	const [isLoading, setIsLoading] = useState(true);
+	const [isError, setIsError] = useState(null);
+
+	useEffect(() => {
+		const getMealData = async () => {
+			try {
+				const response = await fetch(
+					'https://madburgers-cc3a0-default-rtdb.europe-west1.firebasedatabase.app/meals.json'
+				);
+				if (!response.ok || response.type === 'basic') {
+					throw new Error('Something went wrong!');
+				}
+				const data = await response.json();
+				const menuItems = [];
+				for (const key in data) {
+					menuItems.push({
+						id: key,
+						title: data[key].title,
+						price: data[key].price,
+						description: data[key].description,
+					});
+				}
+				setMenuItems(menuItems);
+				setIsLoading(false);
+			} catch (err) {
+				setIsError(err.message);
+			}
+		};
+		getMealData();
+	}, []);
+
+	if (isError) {
+		return (
+			<div className={styles.menu__container}>
+				<div className={styles.menu__title}>Menu</div>
+				<p>{isError}</p>
+			</div>
+		);
+	}
+
 	const mealsList = menuItems.map((item) => (
 		<Item
 			id={item.id}
@@ -59,8 +57,17 @@ const Menu = () => {
 	return (
 		<>
 			<div className={styles.menu__container}>
-				<div className={styles.menu__title}>Menu</div>
-				<ul className={styles.menu__items}>{mealsList}</ul>
+				{isLoading && !isError ? (
+					<>
+						<div className={styles.menu__title}>Menu</div>
+						<p>Loading Menu...</p>
+					</>
+				) : (
+					<>
+						<div className={styles.menu__title}>Menu</div>
+						<ul className={styles.menu__items}>{mealsList}</ul>
+					</>
+				)}
 			</div>
 		</>
 	);

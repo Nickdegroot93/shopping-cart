@@ -11,9 +11,8 @@ Black: #000000
 	align-items: center;
 	max-width: 35rem;
 	min-width: 26rem;
-	background-color: rgba(0, 0, 0);
+	background-color: rgb(24, 24, 24);
 	color: #f4f4f4;
-	border: 1px solid #f0a500;
 	padding: 1rem 2rem;
 	position: relative;
 	border-radius: 0.5rem;
