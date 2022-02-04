@@ -12,7 +12,6 @@ Black: #000000
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	border-bottom: 1px solid #f0a500;
 }
 
 .title {

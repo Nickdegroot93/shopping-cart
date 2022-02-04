@@ -13,6 +13,7 @@ const YourCart = (props) => {
 	let btnClasses = `${styles.yourcart} ${btnIsHighlighted && styles.bump}`;
 
 	useEffect(() => {
+		// Make the cart component do a slight animation when an item is added to the cart.
 		if (cartCtx.items.length === 0) {
 			return;
 		}

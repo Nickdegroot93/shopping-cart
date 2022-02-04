@@ -2,6 +2,7 @@ import CartContext from './cart-context';
 import { useReducer } from 'react';
 
 const cartReducer = (state, action) => {
+	// Add an item to the cart. If the item is already in the cart, increase the quantity.
 	if (action.type === 'ADD') {
 		const updatedTotalAmount =
 			state.totalAmount + action.item.price * action.item.amount;
@@ -29,6 +30,7 @@ const cartReducer = (state, action) => {
 		};
 	}
 
+	// Remove an item from the cart.
 	if (action.type === 'REMOVE') {
 		const existingCartItemIndex = state.items.findIndex(
 			(item) => item.id === action.id
